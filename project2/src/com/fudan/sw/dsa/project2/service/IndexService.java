@@ -384,10 +384,10 @@ public class IndexService
 		String startHour_String = startTime.split(":")[0];
 		String startMinute_String = startTime.split(":")[1];
 		if(endHour_String.charAt(0) == '次'){
-			endHour_String = endHour_String.charAt(1) + endHour_String.charAt(2) + "";
+			endHour_String = (Integer.parseInt(endHour_String.substring(1)) + 24) + "";
 	}
 		if(startHour_String.charAt(0) == '次'){
-			startHour_String = startHour_String.charAt(1) + startHour_String.charAt(2) + "";
+			startHour_String = (Integer.parseInt(startHour_String.substring(1)) + 24) + "";
 		}
 		int endHour = Integer.parseInt(endHour_String);
 		int endMinute = Integer.parseInt(endMinute_String);
